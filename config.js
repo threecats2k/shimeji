@@ -10,4 +10,6 @@ window.MOOSHI_CONFIG = {
   discordUrl: "https://discord.gg/mooshi",
   // Must match the intent-filter on SplashActivity (mooshi://redeem?code=XXX).
   redeemScheme: "mooshi",
+  // Meta Dataset ID (same number as the Facebook app id). The noscript image in index.html must use this id too.
+  pixelId: "1317464923124459",
 };

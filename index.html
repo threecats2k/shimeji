@@ -3,6 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <script src="config.js"></script>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', window.MOOSHI_CONFIG.pixelId);
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" alt=""
+  src="https://www.facebook.com/tr?id=1317464923124459&amp;ev=PageView&amp;noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
   <title>Mooshi — Shimeji screen pets that live on your phone</title>
   <meta name="description" content="Mooshi puts tiny animated shimeji pets on your phone. 470+ characters, build your own, Emoji Battery, live wallpaper, event codes and a friendly Discord community. Free on Google Play and the App Store." />
   <meta name="theme-color" content="#8B34D6" />
@@ -313,7 +331,6 @@
     </div>
   </footer>
 
-  <script src="config.js"></script>
   <script src="i18n.js"></script>
   <script src="shimeji.js"></script>
   <script src="app.js"></script>

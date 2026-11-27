@@ -6,7 +6,7 @@ sides and can be dragged and thrown.
 ```
 index.html   page + English copy
 styles.css   tokens mirror app colors.xml (Design.md)
-config.js    Play URL (with UTM), App Store URL, Discord invite, deep-link scheme  ← edit before publishing
+config.js    Play URL (with UTM), App Store URL, Discord invite, deep-link scheme, Meta Dataset ID
 i18n.js      Vietnamese copy, hero words, pet speech bubbles
 shimeji.js   pet engine (walk / sit / roll / climb / jump to perch / drag-throw / dizzy)
 app.js       reveal, counters, tilt, redeem demo, chat, language toggle

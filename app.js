@@ -12,10 +12,24 @@
 
   /* ---------- links ---------- */
   const open = (a, href) => { a.href = href; a.target = "_blank"; a.rel = "noopener"; };
-  $$(".js-play").forEach((a) => open(a, C.playUrl));
-  $$(".js-ios").forEach((a) => open(a, C.iosUrl));
+  // Lead is the conversion Meta ads optimize for. PageView is fired by the pixel in <head>.
+  const trackStore = (name) => {
+    if (!C.pixelId || typeof fbq !== "function") return;
+    fbq("track", "Lead", { content_name: name, content_category: "app_install" });
+  };
+  $$(".js-play").forEach((a) => {
+    open(a, C.playUrl);
+    a.addEventListener("click", () => trackStore("google_play"));
+  });
+  $$(".js-ios").forEach((a) => {
+    open(a, C.iosUrl);
+    a.addEventListener("click", () => trackStore("app_store"));
+  });
   // Nav "Get the app" follows the visitor's phone; desktop stays on Google Play.
-  $$(".js-store").forEach((a) => open(a, isIOS ? C.iosUrl : C.playUrl));
+  $$(".js-store").forEach((a) => {
+    open(a, isIOS ? C.iosUrl : C.playUrl);
+    a.addEventListener("click", () => trackStore(isIOS ? "app_store" : "google_play"));
+  });
   $$(".js-discord").forEach((a) => { a.href = C.discordUrl; });
   if (isIOS) {
     $$(".store-row").forEach((row) => {
