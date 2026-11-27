@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Mooshi — Shimeji screen pets that live on your phone</title>
+  <meta name="description" content="Mooshi puts tiny animated shimeji pets on your phone. 470+ characters, build your own, Emoji Battery, live wallpaper, event codes and a friendly Discord community. Free on Google Play and the App Store." />
+  <meta name="theme-color" content="#8B34D6" />
+  <meta property="og:title" content="Mooshi — Shimeji screen pets" />
+  <meta property="og:description" content="Tiny pets that walk, climb and nap on your phone screen. Free on Google Play and the App Store." />
+  <meta property="og:image" content="assets/icon.webp" />
+  <link rel="icon" href="assets/icon.webp" type="image/webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Live shimeji layer: mascots walk on the page, perch on [data-perch] elements and can be thrown. -->
+  <div id="pet-layer" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a class="brand" href="#top">
+      <img src="assets/icon.webp" alt="" width="36" height="36" />
+      <span>Mooshi</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#codes" data-i18n="nav.codes">Event codes</a>
+      <a href="#community" data-i18n="nav.community">Community</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="lang" id="lang-toggle" type="button" aria-label="Switch language">VI</button>
+      <a class="btn btn-primary btn-sm magnetic js-store" href="#" data-i18n="cta.get">Get the app</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+      <div class="grain"></div>
+
+      <div class="hero-copy">
+        <span class="pill reveal"><span class="dot"></span><span data-i18n="hero.pill">Free on Android &amp; iOS · 470+ characters</span></span>
+        <h1 class="reveal">
+          <span data-i18n="hero.t1">Tiny pets that</span>
+          <span class="rotator" aria-live="polite"><span class="rot-word grad" data-rot="walk">walk</span></span>
+          <br /><span data-i18n="hero.t2">on your screen.</span>
+        </h1>
+        <p class="lead reveal" data-i18n="hero.lead">Mooshi brings shimeji to your phone: little characters that stroll along the edges, climb the walls, hang off the ceiling and nap on top of your apps. Grab one. Toss it. It will forgive you.</p>
+        <div class="hero-cta reveal">
+          <div class="store-row">
+            <a class="btn btn-primary btn-lg magnetic js-play" href="#" data-perch>
+              <svg class="play" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 5 3.5z"/></svg>
+              <span><small data-i18n="cta.small">Get it on</small><b>Google Play</b></span>
+            </a>
+            <a class="btn btn-store btn-lg magnetic js-ios" href="#">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.72c-.03-2.35 1.92-3.48 2.01-3.54-1.1-1.6-2.8-1.82-3.4-1.84-1.45-.15-2.83.85-3.56.85-.74 0-1.87-.83-3.08-.81-1.58.02-3.04.92-3.86 2.34-1.65 2.86-.42 7.09 1.18 9.41.79 1.14 1.72 2.42 2.95 2.37 1.18-.05 1.63-.76 3.06-.76s1.83.76 3.08.74c1.27-.02 2.08-1.16 2.86-2.3.9-1.32 1.27-2.6 1.29-2.66-.03-.01-2.48-.95-2.53-3.8zM14.5 6.3c.65-.79 1.09-1.88.97-2.97-.94.04-2.08.63-2.75 1.42-.6.7-1.13 1.82-.99 2.89 1.05.08 2.12-.53 2.77-1.34z"/></svg>
+              <span><small data-i18n="cta.small">Get it on</small><b>App Store</b></span>
+            </a>
+          </div>
+          <a class="btn btn-ghost btn-lg magnetic js-discord" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.5 3l-.6 1.2a18 18 0 0 0-5.8 0L8.5 3a19.6 19.6 0 0 0-4.8 1.4C.7 9 0 13.4.3 17.8A19.8 19.8 0 0 0 6.2 20.8l1.3-2.1a12.8 12.8 0 0 1-2-1l.5-.4a14 14 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1l1.3 2.1a19.7 19.7 0 0 0 5.9-3c.4-5.1-.7-9.5-3.4-13.4zM8.7 15.1c-1.2 0-2.1-1-2.1-2.3s.9-2.3 2.1-2.3 2.1 1.1 2.1 2.3-.9 2.3-2.1 2.3zm6.6 0c-1.2 0-2.1-1-2.1-2.3s.9-2.3 2.1-2.3 2.1 1.1 2.1 2.3-.9 2.3-2.1 2.3z"/></svg>
+            <span data-i18n="cta.discord">Join the Discord</span>
+          </a>
+        </div>
+        <ul class="stats reveal">
+          <li><b data-count="470" data-suffix="+">0</b><span data-i18n="stat.chars">characters</span></li>
+          <li><b data-count="9">0</b><span data-i18n="stat.slots">pets at once</span></li>
+          <li><b data-count="25" data-suffix="+">0</b><span data-i18n="stat.langs">languages</span></li>
+        </ul>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="phone tilt" data-perch>
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="statusbar">
+              <span>9:41</span>
+              <span class="battery-emoji"><img src="assets/sprites/s0.webp" alt="" /><i class="batt"><i></i></i><em>87%</em></span>
+            </div>
+            <div class="clock"><b>9:41</b><span data-i18n="phone.date">Friday, 27 November</span></div>
+            <div class="app-grid">
+              <i style="--c:#ffd7e0">📷</i><i style="--c:#d9f0ff">💬</i><i style="--c:#fff1c9">🎵</i><i style="--c:#e6ffe0">🗺️</i>
+              <i style="--c:#f3e8ff">📅</i><i style="--c:#ffe4d1">🛒</i><i style="--c:#e0f7f5">☁️</i><i style="--c:#fde2ff">🎮</i>
+            </div>
+            <!-- mini shimeji living inside the phone -->
+            <div class="mini m-walk"><img src="assets/sprites/skins/corgi/stand.webp" alt="" /></div>
+            <div class="mini m-sit"><img src="assets/sprites/skins/tabby/sit.webp" alt="" /><span class="zz">z<b>z</b><i>z</i></span></div>
+            <div class="mini m-hang"><img src="assets/sprites/skins/fox/stand.webp" alt="" /></div>
+            <div class="dock"><i>📞</i><i>✉️</i><i>🌐</i><i>⚙️</i></div>
+          </div>
+        </div>
+        <div class="float-card fc1 tilt"><span class="emoji">🎁</span><div><b data-i18n="fc.gift">Daily gift</b><small data-i18n="fc.giftsub">A new pet every day</small></div></div>
+        <div class="float-card fc2 tilt"><span class="emoji">🎟️</span><div><b>MOOSHI-SNOW</b><small data-i18n="fc.codesub">Event code redeemed!</small></div></div>
+        <div class="hint" data-i18n="hero.hint">psst… drag the hamster at the bottom ↓</div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <section class="marquee" aria-label="Character categories">
+      <div class="track">
+        <span>🐹 Animal</span><span>✨ Anime</span><span>🎮 Game</span><span>🎤 K-Pop</span><span>😂 Meme</span><span>🎬 Movie</span><span>🌟 Pop-Star</span><span>🎀 Cute</span><span>📺 Cartoon</span><span>🎧 Vocaloid</span><span>🎥 VTuber</span><span>👻 Creepypasta</span><span>🤖 Robots</span>
+        <span>🐹 Animal</span><span>✨ Anime</span><span>🎮 Game</span><span>🎤 K-Pop</span><span>😂 Meme</span><span>🎬 Movie</span><span>🌟 Pop-Star</span><span>🎀 Cute</span><span>📺 Cartoon</span><span>🎧 Vocaloid</span><span>🎥 VTuber</span><span>👻 Creepypasta</span><span>🤖 Robots</span>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+      <header class="section-head reveal">
+        <span class="eyebrow" data-i18n="feat.eyebrow">What Mooshi does</span>
+        <h2 data-i18n="feat.title">A whole tiny world, living on top of your apps</h2>
+        <p data-i18n="feat.sub">Everything below is in the app today. The pets on this page behave the same way: try grabbing one.</p>
+      </header>
+
+      <div class="bento">
+        <article class="card c-wide tilt reveal" data-perch>
+          <div class="card-art art-overlay">
+            <div class="mini-browser">
+              <div class="mb-bar"><i></i><i></i><i></i></div>
+              <div class="mb-lines"><i></i><i></i><i></i><i></i></div>
+              <img class="mb-pet walk-x" src="assets/sprites/skins/husky/w1.webp" alt="" />
+              <img class="mb-pet climb" src="assets/sprites/skins/raccoon/stand.webp" alt="" />
+            </div>
+          </div>
+          <h3 data-i18n="f1.t">Pets on every screen</h3>
+          <p data-i18n="f1.d">They walk the bottom of your screen, climb the sides, hang from the top and keep you company in any app, even while you scroll.</p>
+        </article>
+
+        <article class="card tilt reveal" data-perch>
+          <div class="card-art art-count"><b data-count="470">0</b><span>+</span></div>
+          <h3 data-i18n="f2.t">470+ characters</h3>
+          <p data-i18n="f2.d">Anime, games, K-Pop, memes, VTubers, cute animals. New ones land every week.</p>
+        </article>
+
+        <article class="card tilt reveal" data-perch>
+          <div class="card-art art-create">
+            <span class="step s1">🖼️</span><span class="arrow">→</span><span class="step s2">✂️</span><span class="arrow">→</span><img class="step s3" src="assets/sprites/skins/mooshi/stand.webp" alt="" />
+          </div>
+          <h3 data-i18n="f3.t">Make your own</h3>
+          <p data-i18n="f3.d">Turn any picture into a walking pet with the built-in editor. Your cat, your OC, your best friend.</p>
+        </article>
+
+        <article class="card tilt reveal" data-perch>
+          <div class="card-art art-battery">
+            <div class="sb"><span>12:30</span><span class="sb-r"><img src="assets/sprites/s0.webp" alt="" /><i class="batt big"><i class="fill"></i></i></span></div>
+          </div>
+          <h3 data-i18n="f4.t">Emoji Battery</h3>
+          <p data-i18n="f4.d">Swap the boring status-bar battery for a cute emoji that fills as you charge.</p>
+        </article>
+
+        <article class="card tilt reveal" data-perch>
+          <div class="card-art art-wall">
+            <div class="wall"><img src="assets/sprites/skins/pom/stand.webp" alt="" /><span class="star s-a">✦</span><span class="star s-b">✧</span><span class="star s-c">✦</span></div>
+          </div>
+          <h3 data-i18n="f5.t">Live wallpaper</h3>
+          <p data-i18n="f5.d">Prefer a calm home screen? Let your pets roam the wallpaper instead.</p>
+        </article>
+
+        <article class="card tilt reveal" data-perch>
+          <div class="card-art art-gift"><span class="gift">🎁</span><span class="burst">✨</span></div>
+          <h3 data-i18n="f6.t">Daily gifts &amp; streaks</h3>
+          <p data-i18n="f6.d">Open the app each day to unlock a fresh character. Keep the streak for rarer ones.</p>
+        </article>
+
+        <article class="card c-wide tune reveal" data-perch>
+          <div class="tune-row">
+            <div>
+              <h3 data-i18n="f7.t">Make it yours</h3>
+              <p data-i18n="f7.d">Up to 9 pets at once. Set their size, speed, and whether they climb walls and ceilings. These sliders control the pets on this page.</p>
+            </div>
+            <div class="controls">
+              <label><span data-i18n="ctl.size">Size</span><input type="range" id="ctl-size" min="48" max="120" value="72" /></label>
+              <label><span data-i18n="ctl.speed">Speed</span><input type="range" id="ctl-speed" min="0.4" max="2.4" step="0.1" value="1" /></label>
+              <div class="ctl-buttons">
+                <button class="btn btn-soft btn-sm" id="ctl-add" type="button" data-i18n="ctl.add">+ Drop a pet</button>
+                <button class="btn btn-soft btn-sm" id="ctl-party" type="button" data-i18n="ctl.party">🎉 Party</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section class="section how" id="how">
+      <header class="section-head reveal">
+        <span class="eyebrow" data-i18n="how.eyebrow">Up and running in a minute</span>
+        <h2 data-i18n="how.title">Three taps to a happier screen</h2>
+      </header>
+      <ol class="steps">
+        <li class="reveal" data-perch><span class="num">1</span><h3 data-i18n="how.1t">Pick a pet</h3><p data-i18n="how.1d">Search the library or open today's gift.</p></li>
+        <li class="reveal" data-perch><span class="num">2</span><h3 data-i18n="how.2t">Allow "display over apps"</h3><p data-i18n="how.2d">One Android permission so your pet can walk on top of other apps.</p></li>
+        <li class="reveal" data-perch><span class="num">3</span><h3 data-i18n="how.3t">Say hi</h3><p data-i18n="how.3d">Tap, drag and toss it. Add friends until all 9 slots are full.</p></li>
+      </ol>
+    </section>
+
+    <!-- EVENT CODES -->
+    <section class="section codes" id="codes">
+      <div class="codes-grid">
+        <div class="codes-copy reveal">
+          <span class="eyebrow" data-i18n="codes.eyebrow">Event codes</span>
+          <h2 data-i18n="codes.title">Secret codes unlock pets you can't find anywhere else</h2>
+          <p data-i18n="codes.d">We drop limited-time codes during events, livestreams and in our Discord. Enter one in the app (Home → Redeem) before it expires and the special pet is yours forever.</p>
+          <ul class="ticks">
+            <li data-i18n="codes.l1">Exclusive event pets, never in the store</li>
+            <li data-i18n="codes.l2">Each code has an expiry date, so be quick</li>
+            <li data-i18n="codes.l3">Fresh codes are posted first in #event-codes on Discord</li>
+          </ul>
+        </div>
+
+        <div class="redeem reveal" data-perch>
+          <div class="ticket" id="ticket">
+            <div class="ticket-front">
+              <span class="ticket-label" data-i18n="codes.try">Try one</span>
+              <form id="redeem-form" autocomplete="off">
+                <input id="redeem-input" maxlength="24" spellcheck="false" placeholder="MOOSHI-SNOW" aria-label="Event code" />
+                <button class="btn btn-primary" type="submit" data-i18n="codes.btn">Redeem</button>
+              </form>
+              <small class="muted" data-i18n="codes.hint">Demo: type any code. Real codes are checked inside the app.</small>
+            </div>
+            <div class="ticket-back">
+              <div class="reward">
+                <div class="reward-art"><img src="assets/sprites/skins/fold/sit.webp" alt="" /><span class="snow">❄</span></div>
+                <div>
+                  <span class="badge" data-i18n="codes.badge">Event exclusive</span>
+                  <h3 id="reward-name">Snowy Mooshi</h3>
+                  <p class="muted"><span data-i18n="codes.exp">Code expires in</span> <b id="countdown">--</b></p>
+                </div>
+              </div>
+              <div class="reward-actions">
+                <a class="btn btn-primary" id="open-in-app" href="#" data-i18n="codes.open">Claim in the app</a>
+                <button class="btn btn-ghost" id="ticket-reset" type="button" data-i18n="codes.again">Another code</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section class="section community" id="community">
+      <div class="comm-card reveal" data-perch>
+        <div class="comm-copy">
+          <span class="eyebrow light" data-i18n="comm.eyebrow">Community</span>
+          <h2 data-i18n="comm.title">Hang out with other pet keepers</h2>
+          <p data-i18n="comm.d">Share your custom pets, vote on the next characters, get help, and be first in line for event codes. MooshiBot posts every new drop.</p>
+          <a class="btn btn-white btn-lg magnetic js-discord" href="#" target="_blank" rel="noopener" data-i18n="cta.discord">Join the Discord</a>
+          <div class="avatars"><span>🐹</span><span>🐰</span><span>🦊</span><span>🐱</span><span>🐼</span><em data-i18n="comm.members">and lots of friendly members</em></div>
+        </div>
+        <div class="chat" aria-hidden="true">
+          <div class="chat-side">
+            <b>MOOSHI</b>
+            <span># welcome</span><span class="on"># event-codes</span><span># show-your-pets</span><span># fan-art</span><span># request-a-pet</span><span># help</span>
+          </div>
+          <div class="chat-main">
+            <div class="msg bot in"><i>🤖</i><div><b>MooshiBot <em>BOT</em></b><p data-i18n="chat.1">🎁 New event code! <code>MOOSHI-SNOW</code> unlocks Snowy Mooshi. Expires Sunday.</p></div></div>
+            <div class="msg in"><i>🐰</i><div><b>bunbun</b><p data-i18n="chat.2">got it!! he's sliding down my wallpaper lol</p></div></div>
+            <div class="msg in"><i>🦊</i><div><b>kit</b><p data-i18n="chat.3">made a pet of my dog with the editor, posting in #show-your-pets</p></div></div>
+            <div class="msg bot in"><i>🤖</i><div><b>MooshiBot <em>BOT</em></b><p data-i18n="chat.4">🗳️ Vote for next week's character in #request-a-pet</p></div></div>
+            <div class="typing"><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section class="section download" id="download">
+      <div class="dl reveal" data-perch>
+        <div class="dl-pets"><img src="assets/sprites/skins/fox/stand.webp" alt="" /><img src="assets/sprites/skins/corgi/stand.webp" alt="" /><img src="assets/sprites/skins/cat/stand.webp" alt="" /></div>
+        <h2 data-i18n="dl.title">Your screen is a little empty.</h2>
+        <p data-i18n="dl.d">Mooshi is free on Google Play and the App Store.</p>
+        <div class="store-row">
+          <a class="btn btn-primary btn-lg magnetic js-play" href="#">
+            <svg class="play" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 5 3.5z"/></svg>
+            <span><small data-i18n="cta.small">Get it on</small><b>Google Play</b></span>
+          </a>
+          <a class="btn btn-store btn-lg magnetic js-ios" href="#">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.72c-.03-2.35 1.92-3.48 2.01-3.54-1.1-1.6-2.8-1.82-3.4-1.84-1.45-.15-2.83.85-3.56.85-.74 0-1.87-.83-3.08-.81-1.58.02-3.04.92-3.86 2.34-1.65 2.86-.42 7.09 1.18 9.41.79 1.14 1.72 2.42 2.95 2.37 1.18-.05 1.63-.76 3.06-.76s1.83.76 3.08.74c1.27-.02 2.08-1.16 2.86-2.3.9-1.32 1.27-2.6 1.29-2.66-.03-.01-2.48-.95-2.53-3.8zM14.5 6.3c.65-.79 1.09-1.88.97-2.97-.94.04-2.08.63-2.75 1.42-.6.7-1.13 1.82-.99 2.89 1.05.08 2.12-.53 2.77-1.34z"/></svg>
+            <span><small data-i18n="cta.small">Get it on</small><b>App Store</b></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
+      <header class="section-head reveal"><span class="eyebrow">FAQ</span><h2 data-i18n="faq.title">Questions, answered</h2></header>
+      <div class="faq-list">
+        <details class="reveal"><summary data-i18n="q1">Is Mooshi free?</summary><p data-i18n="a1">Yes. Most pets are free. Some premium characters can be unlocked by watching a short ad or with Premium, which also removes ads.</p></details>
+        <details class="reveal"><summary data-i18n="q2">Why does it need "display over other apps"?</summary><p data-i18n="a2">That Android permission is what lets a pet walk on top of other apps. Mooshi does not read what is on your screen.</p></details>
+        <details class="reveal"><summary data-i18n="q3">Will it drain my battery?</summary><p data-i18n="a3">Pets are lightweight sprites. There is a battery saver in Settings that pauses them when your phone is low.</p></details>
+        <details class="reveal"><summary data-i18n="q4">Where do I get event codes?</summary><p data-i18n="a4">In #event-codes on our Discord, during livestreams and at events. Open the app, tap Redeem on Home and type the code before it expires.</p></details>
+        <details class="reveal"><summary data-i18n="q5">Can I make a pet from my own picture?</summary><p data-i18n="a5">Yes. Tap Create on Home, pick your images and the editor turns them into a walking, climbing pet.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="foot-brand"><img src="assets/icon.webp" alt="" width="28" height="28" /><b>Mooshi</b><span data-i18n="foot.tag">Tiny pets, big smiles.</span></div>
+    <div class="foot-links">
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#codes" data-i18n="nav.codes">Event codes</a>
+      <a class="js-discord" href="#" target="_blank" rel="noopener">Discord</a>
+      <a class="js-play" href="#">Google Play</a>
+      <a class="js-ios" href="#">App Store</a>
+    </div>
+    <div class="pet-toggle">
+      <button class="btn btn-soft btn-sm" id="pets-toggle" type="button" data-i18n="foot.hide">Hide pets</button>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="i18n.js"></script>
+  <script src="shimeji.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
